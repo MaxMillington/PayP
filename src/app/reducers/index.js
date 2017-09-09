@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
+import bingo from './bingoReducer'
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state,
+  bingo
+  // state: (state = {}) => state,
 });
 
 export default rootReducer;
