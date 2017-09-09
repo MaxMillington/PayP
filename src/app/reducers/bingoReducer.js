@@ -27,18 +27,21 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case BINGO:
+      console.log('bingo')
       return {
         ...state,
         loading: true
       }
 
     case BINGO_SUCCESS:
+      console.log('bingo success')
       return {
         ...state,
         loading: false
       }
 
     case BINGO_ERROR:
+      console.log('bingo error')
       return {
         ...state,
         loading: false,
@@ -46,18 +49,21 @@ export default (state = initialState, action) => {
       }
 
     case NEXT_BALL:
+      console.log('next ball')
       return {
         ...state,
         loading: true
       }
 
     case NEXT_BALL_SUCCESS:
+      console.log('next success')
       return {
         ...state,
         loading: false
       }
 
     case NEXT_BALL_ERROR:
+      console.log('next error')
       return {
         ...state,
         loading: false,

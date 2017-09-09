@@ -1,37 +1,33 @@
-import React from 'react'
-import Chance from 'chance'
+import React, { PropTypes } from 'react'
 import BingoBoard from './BingoBoard'
 import Button from './Button'
 
-const Bingo = () => {
-  const chance = new Chance()
-  const numbers1 = chance.unique(chance.natural, 25, {min: 1, max: 99})
-  const numbers2 = chance.unique(chance.natural, 25, {min: 1, max: 99})
-  const numbers3 = chance.unique(chance.natural, 25, {min: 1, max: 99})
-  const numbers4 = chance.unique(chance.natural, 25, {min: 1, max: 99})
-
-  const bingo = () => {
-    console.log('bingo')
-  }
-
-  const getBall = () => {
-    console.log('basl')
-  }
-
+const Bingo = (props) => {
   return (
     <div className="container home">
       <div className="boards-container">
-        <BingoBoard numbers={numbers1} />
-        <BingoBoard numbers={numbers2} />
-        <BingoBoard numbers={numbers3} />
-        <BingoBoard numbers={numbers4} />
+        <BingoBoard numbers={props.board1Numbers} />
+        <BingoBoard numbers={props.board2Numbers} />
+        <BingoBoard numbers={props.board3Numbers} />
+        <BingoBoard numbers={props.board4Numbers} />
       </div>
       <div className="buttons-container">
-        <Button text="Call Bingo!" click={bingo}/>
-        <Button text="Next Ball" click={getBall}/>
+        <Button text="Call Bingo!" click={props.callBingo}/>
+        <Button text="Next Ball" click={props.getNextBall}/>
       </div>
     </div>
   )
+}
+
+Bingo.propTypes = {
+  board1Numbers: PropTypes.array.isRequired,
+  board2Numbers: PropTypes.array.isRequired,
+  board3Numbers: PropTypes.array.isRequired,
+  board4Numbers: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.bool.isRequired,
+  callBingo: PropTypes.func.isRequired,
+  getNextBall: PropTypes.func.isRequired
 }
 
 
