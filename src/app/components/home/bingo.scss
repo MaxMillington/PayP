@@ -1,6 +1,10 @@
 .home {
+  background-color: #EEF2F5;
+  max-width: 700px;
+}
 
-  h1 {
-    color: $light-blue;
-  }
+.boards-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }

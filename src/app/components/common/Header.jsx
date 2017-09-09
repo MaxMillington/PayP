@@ -15,20 +15,22 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div className="left-column">
-          <div className="ball-text">
-            Last Ball
+        <div className="column-container">
+          <div className="left-column">
+            <div className="ball-text">
+              Last Ball
+            </div>
+            <div className="number-tile">
+              77
+            </div>
           </div>
-          <div className="number-tile">
-            77
-          </div>
-        </div>
-        <div className="right-column">
-          <div className="ball-text--small">
-            Previous Balls
-          </div>
-          <div className="tile-container">
-            {renderTiles(tiles)}
+          <div className="right-column">
+            <div className="ball-text--small">
+              Previous Balls
+            </div>
+            <div className="tile-container">
+              {renderTiles(tiles)}
+            </div>
           </div>
         </div>
       </nav>
